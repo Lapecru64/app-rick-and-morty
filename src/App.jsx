@@ -7,7 +7,10 @@ import ResidentCard from "./components/ResidentCard"
 
 function App() {
 
-  const [ location, setLocation] = useState()
+  const [ location, setLocation] = 
+  useState()
+
+
 
   useEffect(() => {
     const url = `https://rickandmortyapi.com/api/location/${getRandomNumber(126)}`
@@ -22,10 +25,11 @@ function App() {
     <>
       <div>
         <h1>RICK AND MORTY APP</h1>
+         
         <LocationInfo
         location={location}
         />
-        <div>
+        <div className="resident-container">
           {
           location?.residents.map(url => (
           <ResidentCard
