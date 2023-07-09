@@ -4,3 +4,27 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+
+.input {
+    border: 1px solid black;
+  }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(86, 61, 231);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+.pagination {
+    display: flex;
+    justify-content: end;
+    margin-top: 0.6rem;
+  }
+  
+  .pagination button {
+    margin: 0 1rem;
+  }
+  

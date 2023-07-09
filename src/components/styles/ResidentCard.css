@@ -5,6 +5,11 @@
     max-width: 320px;
     border-radius: 0.8em;
     overflow: hidden;
+    transition: transform 200ms ease;
+}
+
+.resident:hover {
+    transform: scale(1.05);
 }
 
 .resident__header {
