@@ -7,7 +7,7 @@ const handleSubmit = e => {
 e.preventDefault()
 let inputValue = e.target.inputId.value.trim()
 
-// Asegurar que el valor ingresado esté en el rango correcto
+
 if (inputValue === '' || inputValue === "0" || inputValue < 1 || inputValue < 126){
   setIdLocation(getRandomNumber(126))
 }else {

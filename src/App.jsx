@@ -13,7 +13,7 @@ function App() {
   const [hasError, setHasError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
-  // Añadimos el estado para manejar la página
+  
   const [page, setPage] = useState(1);
   const itemsPerPage = 6;
 
