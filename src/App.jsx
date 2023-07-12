@@ -1,37 +1,24 @@
-
+import axios from "axios"
 import { useEffect, useState } from "react";
 import './App.css';
-import axios from "axios";
 import getRandomNumber from "./utils/getRandomNumber";
 import LocationInfo from "./components/LocationInfo";
 import ResidentCard from "./components/ResidentCard";
 import FormLocation from "./components/FormLocation";
+import useFetch from "./hooks/useFetch";
 
 function App() {
-  const [location, setLocation] = useState();
+  
   const [idLocation, setIdLocation] = useState(getRandomNumber(126));
-  const [hasError, setHasError] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
-
   
   const [page, setPage] = useState(1);
   const itemsPerPage = 6;
 
-  useEffect(() => {
     const url = `https://rickandmortyapi.com/api/location/${idLocation}`;
-    setIsLoading(true);
-    axios.get(url)
-      .then(res => {
-        setLocation(res.data);
-        setHasError(false);
-      })
-      .catch(err => {
-        console.error(err);
-        setHasError(true);
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
+    const [location, getSingleLocation, hasError, isLoading] = useFetch(url)
+    
+    useEffect(() => {
+      getSingleLocation()
   }, [idLocation]);
 
   return (
